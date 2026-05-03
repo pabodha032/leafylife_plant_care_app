@@ -217,9 +217,9 @@ class _HomePageState extends State<HomePage> {
       case 'Snake Plant':
         return 'assets/snakeplant.png';
       case 'Peace Lily':
-        return 'assets/image11.png';
+        return 'assets/peacelily.png';
       case 'Fern':
-        return 'assets/image13.png';
+        return 'assets/fern.png';
       case 'Orchid':
         return 'assets/orchid.png';
       case 'Spider Plant':
@@ -231,11 +231,11 @@ class _HomePageState extends State<HomePage> {
       case 'ZZ Plant':
         return 'assets/zz.png';
       case 'Calathea':
-        return 'assets/calathea.png';
+        return 'assets/calathea2.png';
       case 'Aloe Vera':
-        return 'assets/image12.png';
+        return 'assets/aloevera.png';
       case 'Cactus':
-        return 'assets/image1.jpg';
+        return 'assets/cactus.png';
       case 'Jade Plant':
         return 'assets/jade.png';
       case 'Echeveria':
@@ -243,9 +243,9 @@ class _HomePageState extends State<HomePage> {
       case 'Haworthia':
         return 'assets/haworthia.png';
       case 'Burro\'s Tail':
-        return 'assets/burros.png';
+        return 'assets/burro.png';
       case 'String of Pearls':
-        return 'assets/pearls.png';
+        return 'assets/string.png';
       case 'Agave':
         return 'assets/agave.png';
       case 'Sunflower':
@@ -255,7 +255,7 @@ class _HomePageState extends State<HomePage> {
       case 'Basil':
         return 'assets/basil.png';
       case 'Rose':
-        return 'assets/rose.png';
+        return 'assets/rose2.png';
       case 'Hibiscus':
         return 'assets/hibiscus.png';
       case 'Jasmine':
@@ -535,6 +535,7 @@ class _HomePageState extends State<HomePage> {
       backgroundColor: const Color(0xFFF8F8F8),
       appBar: AppBar(
         backgroundColor: Colors.white,
+
         elevation: 0,
         title: const Text(
           'LeafyLife',
@@ -545,196 +546,217 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Container(
-              margin: const EdgeInsets.all(10),
-              padding: const EdgeInsets.all(10),
-              decoration: BoxDecoration(
-                color: const Color(0xFF4CAF50).withOpacity(0.1),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              child: Row(
-                children: [
-                  Image.asset(
-                    'assets/image12.png',
-                    height: 100,
-                    width: 100,
-                    fit: BoxFit.contain,
-                  ),
-                  const SizedBox(width: 5),
-                  const Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'Hello, Plant Lover! 🌱',
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold,
-                            color: Color(0xFF2E7D32),
-                          ),
-                        ),
-                        SizedBox(height: 5),
-                        Text(
-                          'Discover new plants and care tips today',
-                          style: TextStyle(fontSize: 14, color: Colors.black54),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
-            // Search Bar
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Container(
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('assets/back7.jpg'),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Container(
+                margin: const EdgeInsets.all(10),
+                padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Colors.grey.withOpacity(0.1),
-                      blurRadius: 5,
-                      offset: const Offset(0, 2),
-                    ),
-                  ],
+                  //color: const Color(0xFF4CAF50).withOpacity(0.1),
+                  color: const Color.fromARGB(255, 130, 194, 131),
+                  borderRadius: BorderRadius.circular(20),
                 ),
-                child: TextField(
-                  onChanged: (value) {
-                    setState(() {
-                      searchQuery = value;
-                    });
-                  },
-                  decoration: const InputDecoration(
-                    hintText: 'Search plants...',
-                    prefixIcon: Icon(Icons.search, color: Color(0xFF4CAF50)),
-                    border: InputBorder.none,
-                    contentPadding: EdgeInsets.all(15),
-                  ),
-                ),
-              ),
-            ),
-
-            const SizedBox(height: 16),
-
-            // Categories
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Text(
-                'Categories',
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-              ),
-            ),
-
-            const SizedBox(height: 10),
-
-            SizedBox(
-              height: 45,
-              child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                padding: const EdgeInsets.symmetric(horizontal: 16),
-                itemCount: categories.length,
-                itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.only(right: 12),
-                    child: FilterChip(
-                      label: Text(categories[index]),
-                      selected: selectedCategory == categories[index],
-                      onSelected: (selected) {
-                        setState(() {
-                          selectedCategory = categories[index];
-                          searchQuery = '';
-                        });
-                      },
-                      selectedColor: const Color(0xFF4CAF50),
-                      checkmarkColor: Colors.white,
-                      labelStyle: TextStyle(
-                        color: selectedCategory == categories[index]
-                            ? Colors.white
-                            : Colors.black87,
-                      ),
+                child: Row(
+                  children: [
+                    Image.asset(
+                      //'assets/image12.png',
+                      'assets/back12.png',
+                      height: 100,
+                      width: 100,
+                      fit: BoxFit.contain,
                     ),
-                  );
-                },
-              ),
-            ),
-
-            const SizedBox(height: 16),
-
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  const Text(
-                    'Popular Plants',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    '${filteredPlants.length} plants',
-                    style: TextStyle(fontSize: 14, color: Colors.grey[600]),
-                  ),
-                ],
-              ),
-            ),
-
-            const SizedBox(height: 10),
-
-            filteredPlants.isEmpty
-                ? Center(
-                    child: Padding(
-                      padding: const EdgeInsets.all(50),
+                    const SizedBox(width: 5),
+                    const Expanded(
                       child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Icon(
-                            Icons.search_off,
-                            size: 80,
-                            color: Colors.grey[300],
-                          ),
-                          const SizedBox(height: 16),
                           Text(
-                            searchQuery.isEmpty
-                                ? 'No plants found in "$selectedCategory"'
-                                : 'No results for "$searchQuery"',
+                            'Hello, Plant Lover! 🌱',
                             style: TextStyle(
-                              fontSize: 16,
-                              color: Colors.grey[500],
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Color(0xFF2E7D32),
                             ),
                           ),
-                          const SizedBox(height: 8),
-                          if (searchQuery.isNotEmpty)
-                            TextButton(
-                              onPressed: () {
-                                setState(() {
-                                  searchQuery = '';
-                                });
-                              },
-                              child: const Text('Clear Search'),
+                          SizedBox(height: 5),
+                          Text(
+                            'Discover new plants and care tips today',
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.black54,
                             ),
+                          ),
                         ],
                       ),
                     ),
-                  )
-                : Padding(
-                    padding: const EdgeInsets.all(16),
-                    child: GridView.count(
-                      shrinkWrap: true,
-                      physics: const NeverScrollableScrollPhysics(),
-                      crossAxisCount: 2,
-                      crossAxisSpacing: 16,
-                      mainAxisSpacing: 16,
-                      childAspectRatio: 0.65,
-                      children: filteredPlants.map((plant) {
-                        return _buildPlantCard(plant['name']!, plant['type']!);
-                      }).toList(),
+                  ],
+                ),
+              ),
+
+              // Search Bar
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15),
+                    boxShadow: [
+                      BoxShadow(
+                        color: Colors.grey.withOpacity(0.1),
+                        blurRadius: 5,
+                        offset: const Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  child: TextField(
+                    onChanged: (value) {
+                      setState(() {
+                        searchQuery = value;
+                      });
+                    },
+                    decoration: const InputDecoration(
+                      hintText: 'Search plants...',
+                      prefixIcon: Icon(Icons.search, color: Color(0xFF4CAF50)),
+                      border: InputBorder.none,
+                      contentPadding: EdgeInsets.all(15),
                     ),
                   ),
-          ],
+                ),
+              ),
+
+              const SizedBox(height: 16),
+
+              // Categories
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16),
+                child: Text(
+                  'Categories',
+                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                ),
+              ),
+
+              const SizedBox(height: 10),
+
+              SizedBox(
+                height: 45,
+                child: ListView.builder(
+                  scrollDirection: Axis.horizontal,
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  itemCount: categories.length,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 12),
+                      child: FilterChip(
+                        label: Text(categories[index]),
+                        selected: selectedCategory == categories[index],
+                        onSelected: (selected) {
+                          setState(() {
+                            selectedCategory = categories[index];
+                            searchQuery = '';
+                          });
+                        },
+                        selectedColor: const Color(0xFF4CAF50),
+                        checkmarkColor: Colors.white,
+                        labelStyle: TextStyle(
+                          color: selectedCategory == categories[index]
+                              ? Colors.white
+                              : Colors.black87,
+                        ),
+                      ),
+                    );
+                  },
+                ),
+              ),
+
+              const SizedBox(height: 16),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const Text(
+                      'Popular Plants',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    Text(
+                      '${filteredPlants.length} plants',
+                      style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+                    ),
+                  ],
+                ),
+              ),
+
+              const SizedBox(height: 10),
+
+              filteredPlants.isEmpty
+                  ? Center(
+                      child: Padding(
+                        padding: const EdgeInsets.all(50),
+                        child: Column(
+                          children: [
+                            Icon(
+                              Icons.search_off,
+                              size: 80,
+                              color: Colors.grey[300],
+                            ),
+                            const SizedBox(height: 16),
+                            Text(
+                              searchQuery.isEmpty
+                                  ? 'No plants found in "$selectedCategory"'
+                                  : 'No results for "$searchQuery"',
+                              style: TextStyle(
+                                fontSize: 16,
+                                color: Colors.grey[500],
+                              ),
+                            ),
+                            const SizedBox(height: 8),
+                            if (searchQuery.isNotEmpty)
+                              TextButton(
+                                onPressed: () {
+                                  setState(() {
+                                    searchQuery = '';
+                                  });
+                                },
+                                child: const Text('Clear Search'),
+                              ),
+                          ],
+                        ),
+                      ),
+                    )
+                  : Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: GridView.count(
+                        shrinkWrap: true,
+                        physics: const NeverScrollableScrollPhysics(),
+                        crossAxisCount: 2,
+                        crossAxisSpacing: 16,
+                        mainAxisSpacing: 16,
+                        childAspectRatio: 0.65,
+                        children: filteredPlants.map((plant) {
+                          return _buildPlantCard(
+                            plant['name']!,
+                            plant['type']!,
+                          );
+                        }).toList(),
+                      ),
+                    ),
+            ],
+          ),
         ),
       ),
 
@@ -857,6 +879,7 @@ class _HomePageState extends State<HomePage> {
     return Container(
       decoration: BoxDecoration(
         color: Colors.white,
+        //color: const Color.fromARGB(255, 54, 128, 57),
         borderRadius: BorderRadius.circular(15),
         boxShadow: [
           BoxShadow(
@@ -874,21 +897,15 @@ class _HomePageState extends State<HomePage> {
               Container(
                 height: 150,
                 width: double.infinity,
-                decoration: BoxDecoration(
-                  color: const Color(0xFF4CAF50).withOpacity(0.1),
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(15),
-                    topRight: Radius.circular(15),
-                  ),
-                ),
-                child: ClipRRect(
-                  borderRadius: const BorderRadius.only(
-                    topLeft: Radius.circular(15),
-                    topRight: Radius.circular(15),
-                  ),
+                //color: const Color(0xFF4CAF50).withOpacity(0.1),
+                color: const Color.fromARGB(255, 220, 241, 227),
+
+                child: Center(
                   child: Image.asset(
                     _getPlantImage(name),
-                    fit: BoxFit.cover,
+                    height: 130,
+                    width: 130,
+                    fit: BoxFit.contain,
                     errorBuilder: (context, error, stackTrace) {
                       return Center(
                         child: Icon(
@@ -915,6 +932,7 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.all(6),
                     decoration: BoxDecoration(
                       color: Colors.white,
+
                       shape: BoxShape.circle,
                       boxShadow: [
                         BoxShadow(

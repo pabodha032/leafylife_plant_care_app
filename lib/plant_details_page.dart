@@ -52,21 +52,19 @@ class PlantDetailsPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Container(
-              height: 250,
+              height: 350,
               width: double.infinity,
-              decoration: BoxDecoration(
-                color: const Color(0xFF4CAF50).withOpacity(0.1),
-              ),
+              color: const Color(0xFF4CAF50).withOpacity(0.1),
               child: Center(
                 child: Image.asset(
                   imageAsset,
-                  height: 200,
-                  width: 200,
+                  height: 300,
+                  width: 300,
                   fit: BoxFit.contain,
                   errorBuilder: (context, error, stackTrace) {
                     return Icon(
                       Icons.eco,
-                      size: 100,
+                      size: 120,
                       color: const Color(0xFF4CAF50).withOpacity(0.5),
                     );
                   },

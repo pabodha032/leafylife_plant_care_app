@@ -99,7 +99,7 @@ class _SettingsPageState extends State<SettingsPage> {
                             isDarkMode = value;
                           });
                         },
-                        activeColor: const Color(0xFF4CAF50),
+                        activeThumbColor: const Color(0xFF4CAF50),
                       ),
                     ],
                   ),
@@ -130,7 +130,7 @@ class _SettingsPageState extends State<SettingsPage> {
                             isNotificationEnabled = value;
                           });
                         },
-                        activeColor: const Color(0xFF4CAF50),
+                        activeThumbColor: const Color(0xFF4CAF50),
                       ),
                     ],
                   ),
@@ -161,7 +161,7 @@ class _SettingsPageState extends State<SettingsPage> {
                             isSoundEnabled = value;
                           });
                         },
-                        activeColor: const Color(0xFF4CAF50),
+                        activeThumbColor: const Color(0xFF4CAF50),
                       ),
                     ],
                   ),
@@ -231,7 +231,7 @@ class _SettingsPageState extends State<SettingsPage> {
                             isWateringReminder = value;
                           });
                         },
-                        activeColor: const Color(0xFF4CAF50),
+                        activeThumbColor: const Color(0xFF4CAF50),
                       ),
                     ],
                   ),
@@ -262,7 +262,7 @@ class _SettingsPageState extends State<SettingsPage> {
                             isFertilizerReminder = value;
                           });
                         },
-                        activeColor: const Color(0xFF4CAF50),
+                        activeThumbColor: const Color(0xFF4CAF50),
                       ),
                     ],
                   ),

@@ -404,9 +404,9 @@ class _MyGardenPageState extends State<MyGardenPage> {
       case 'Snake Plant':
         return 'assets/snakeplant.png';
       case 'Peace Lily':
-        return 'assets/image11.png';
+        return 'assets/peacelily.png';
       case 'Fern':
-        return 'assets/image13.png';
+        return 'assets/fern.png';
       case 'Orchid':
         return 'assets/orchid.png';
       case 'Spider Plant':
@@ -418,11 +418,11 @@ class _MyGardenPageState extends State<MyGardenPage> {
       case 'ZZ Plant':
         return 'assets/zz.png';
       case 'Calathea':
-        return 'assets/calathea.png';
+        return 'assets/calathea2.png';
       case 'Aloe Vera':
-        return 'assets/image12.png';
+        return 'assets/aloevera.png';
       case 'Cactus':
-        return 'assets/image1.jpg';
+        return 'assets/cactus.png';
       case 'Jade Plant':
         return 'assets/jade.png';
       case 'Echeveria':
@@ -436,7 +436,7 @@ class _MyGardenPageState extends State<MyGardenPage> {
       case 'Basil':
         return 'assets/basil.png';
       case 'Rose':
-        return 'assets/rose.png';
+        return 'assets/rose2.png';
       case 'Hibiscus':
         return 'assets/hibiscus.png';
       case 'Jasmine':
