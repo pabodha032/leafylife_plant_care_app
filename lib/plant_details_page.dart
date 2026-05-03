@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'my_garden_page.dart';
 
 class PlantDetailsPage extends StatelessWidget {
   final String plantName;
@@ -23,6 +24,104 @@ class PlantDetailsPage extends StatelessWidget {
     required this.imageAsset,
     required this.careTips,
   });
+
+  String _getCurrentDate() {
+    DateTime now = DateTime.now();
+    List<String> months = [
+      'Jan',
+      'Feb',
+      'Mar',
+      'Apr',
+      'May',
+      'Jun',
+      'Jul',
+      'Aug',
+      'Sep',
+      'Oct',
+      'Nov',
+      'Dec',
+    ];
+    return '${months[now.month - 1]} ${now.day}, ${now.year}';
+  }
+
+  void _addToGarden(BuildContext context) {
+    if (GardenData.isPlantInGarden(plantName)) {
+      _showAlertDialog(
+        context,
+        'Already in Garden',
+        '$plantName is already in your garden!',
+        Icons.info,
+        Colors.orange,
+      );
+      return;
+    }
+
+    GardenData.addPlant({
+      'name': plantName,
+      'type': plantType,
+      'imageAsset': imageAsset,
+      'dateAdded': 'Added on ${_getCurrentDate()}',
+      'waterStatus': watering,
+    });
+
+    _showSuccessDialog(context, 'Added $plantName to My Garden');
+  }
+
+  void _showSuccessDialog(BuildContext context, String message) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: const Icon(
+          Icons.check_circle,
+          size: 50,
+          color: Color(0xFF4CAF50),
+        ),
+        content: Text(
+          message,
+          textAlign: TextAlign.center,
+          style: const TextStyle(fontSize: 16),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: const Text('OK', style: TextStyle(color: Color(0xFF4CAF50))),
+          ),
+        ],
+      ),
+    );
+  }
+
+  void _showAlertDialog(
+    BuildContext context,
+    String title,
+    String message,
+    IconData icon,
+    Color color,
+  ) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+        title: Icon(icon, size: 50, color: color),
+        content: Text(
+          message,
+          textAlign: TextAlign.center,
+          style: const TextStyle(fontSize: 16),
+        ),
+        actions: [
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+            },
+            child: const Text('OK', style: TextStyle(color: Color(0xFF4CAF50))),
+          ),
+        ],
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,7 +174,6 @@ class PlantDetailsPage extends StatelessWidget {
             Card(
               margin: const EdgeInsets.all(16),
               color: Colors.white,
-
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
               ),
@@ -161,21 +259,18 @@ class PlantDetailsPage extends StatelessWidget {
                           value: watering,
                           color: Colors.blue,
                         ),
-
                         _buildCareCard(
                           icon: Icons.wb_sunny,
                           title: 'Sunlight',
                           value: sunlight,
                           color: Colors.orange,
                         ),
-
                         _buildCareCard(
                           icon: Icons.thermostat,
                           title: 'Temperature',
                           value: temperature,
                           color: Colors.red,
                         ),
-
                         _buildCareCard(
                           icon: Icons.emoji_events,
                           title: 'Difficulty',
@@ -233,10 +328,7 @@ class PlantDetailsPage extends StatelessWidget {
                         Expanded(
                           child: ElevatedButton(
                             onPressed: () {
-                              _showSuccessDialog(
-                                context,
-                                'Added $plantName to My Garden',
-                              );
+                              _addToGarden(context);
                             },
                             style: ElevatedButton.styleFrom(
                               backgroundColor: const Color(0xFF4CAF50),
@@ -376,32 +468,5 @@ class PlantDetailsPage extends StatelessWidget {
       default:
         return difficulty;
     }
-  }
-
-  void _showSuccessDialog(BuildContext context, String message) {
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-        title: const Icon(
-          Icons.check_circle,
-          size: 50,
-          color: Color(0xFF4CAF50),
-        ),
-        content: Text(
-          message,
-          textAlign: TextAlign.center,
-          style: const TextStyle(fontSize: 16),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            child: const Text('OK', style: TextStyle(color: Color(0xFF4CAF50))),
-          ),
-        ],
-      ),
-    );
   }
 }

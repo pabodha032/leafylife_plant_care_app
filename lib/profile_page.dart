@@ -584,20 +584,20 @@ class ProfilePage extends StatelessWidget {
     );
   }
 
-  Widget _buildStatItem(String count, String label) {
-    return Column(
-      children: [
-        Text(
-          count,
-          style: const TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
-            color: Color(0xFF4CAF50),
-          ),
-        ),
-        const SizedBox(height: 5),
-        Text(label, style: TextStyle(fontSize: 12, color: Colors.grey[600])),
-      ],
-    );
-  }
+  // Widget _buildStatItem(String count, String label) {
+  //   return Column(
+  //     children: [
+  //       Text(
+  //         count,
+  //         style: const TextStyle(
+  //           fontSize: 24,
+  //           fontWeight: FontWeight.bold,
+  //           color: Color(0xFF4CAF50),
+  //         ),
+  //       ),
+  //       const SizedBox(height: 5),
+  //       Text(label, style: TextStyle(fontSize: 12, color: Colors.grey[600])),
+  //     ],
+  //   );
+  // }
 }
