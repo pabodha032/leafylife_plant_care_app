@@ -108,6 +108,7 @@ flutter:
     - assets/calathea2.png
     - assets/zz.png
     - assets/tomato.png
+    - assets/profile.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

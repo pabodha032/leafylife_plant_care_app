@@ -14,8 +14,8 @@ class FavoritesPage extends StatelessWidget {
         'type': 'Low Light',
         'imageAsset': 'assets/snakeplant.png',
       },
-      'Peace Lily': {'type': 'Flowering', 'imageAsset': 'assets/image11.png'},
-      'Fern': {'type': 'Humidity Lover', 'imageAsset': 'assets/image13.png'},
+      'Peace Lily': {'type': 'Flowering', 'imageAsset': 'assets/peacelily.png'},
+      'Fern': {'type': 'Humidity Lover', 'imageAsset': 'assets/fern.png'},
       'Orchid': {'type': 'Flowering', 'imageAsset': 'assets/orchid.png'},
       'Spider Plant': {
         'type': 'Air Purifier',
@@ -27,9 +27,12 @@ class FavoritesPage extends StatelessWidget {
       },
       'Pothos': {'type': 'Trailing', 'imageAsset': 'assets/pothos.png'},
       'ZZ Plant': {'type': 'Low Light', 'imageAsset': 'assets/zz.png'},
-      'Calathea': {'type': 'Prayer Plant', 'imageAsset': 'assets/calathea.png'},
-      'Aloe Vera': {'type': 'Medicinal', 'imageAsset': 'assets/image12.png'},
-      'Cactus': {'type': 'Desert Plant', 'imageAsset': 'assets/image1.jpg'},
+      'Calathea': {
+        'type': 'Prayer Plant',
+        'imageAsset': 'assets/calathea2.png',
+      },
+      'Aloe Vera': {'type': 'Medicinal', 'imageAsset': 'assets/aloevera.png'},
+      'Cactus': {'type': 'Desert Plant', 'imageAsset': 'assets/cactus.png'},
       'Jade Plant': {'type': 'Money Plant', 'imageAsset': 'assets/jade.png'},
       'Echeveria': {
         'type': 'Rosette Shape',
@@ -45,7 +48,7 @@ class FavoritesPage extends StatelessWidget {
       },
       'Lavender': {'type': 'Aromatic', 'imageAsset': 'assets/lavender.png'},
       'Basil': {'type': 'Herb', 'imageAsset': 'assets/basil.png'},
-      'Rose': {'type': 'Flowering', 'imageAsset': 'assets/rose.png'},
+      'Rose': {'type': 'Flowering', 'imageAsset': 'assets/rose2.png'},
       'Hibiscus': {'type': 'Tropical', 'imageAsset': 'assets/hibiscus.png'},
       'Jasmine': {'type': 'Fragrant', 'imageAsset': 'assets/jasmine.png'},
       'Mint': {'type': 'Herb', 'imageAsset': 'assets/mint.png'},
@@ -284,12 +287,62 @@ class FavoritesPage extends StatelessWidget {
         return 'Rs. 1,500';
       case 'Orchid':
         return 'Rs. 3,500';
+      case 'Spider Plant':
+        return 'Rs. 1,200';
+      case 'Rubber Plant':
+        return 'Rs. 2,800';
+      case 'Pothos':
+        return 'Rs. 900';
+      case 'ZZ Plant':
+        return 'Rs. 2,000';
+      case 'Calathea':
+        return 'Rs. 2,500';
+
       case 'Aloe Vera':
         return 'Rs. 1,200';
       case 'Cactus':
         return 'Rs. 800';
+      case 'Jade Plant':
+        return 'Rs. 1,500';
+      case 'Echeveria':
+        return 'Rs. 600';
+      case 'Haworthia':
+        return 'Rs. 700';
+      case 'Burro\'s Tail':
+        return 'Rs. 850';
+      case 'String of Pearls':
+        return 'Rs. 950';
+      case 'Agave':
+        return 'Rs. 1,800';
+
+      case 'Sunflower':
+        return 'Rs. 400';
+      case 'Lavender':
+        return 'Rs. 1,000';
+      case 'Basil':
+        return 'Rs. 300';
       case 'Rose':
         return 'Rs. 1,000';
+      case 'Hibiscus':
+        return 'Rs. 1,200';
+      case 'Jasmine':
+        return 'Rs. 900';
+      case 'Mint':
+        return 'Rs. 250';
+      case 'Tomato Plant':
+        return 'Rs. 350';
+      case 'Marigold':
+        return 'Rs. 400';
+      case 'Bougainvillea':
+        return 'Rs. 1,500';
+
+      case 'Lily':
+        return 'Rs. 1,800';
+      case 'Daisy':
+        return 'Rs. 600';
+      case 'Tulip':
+        return 'Rs. 1,200';
+
       default:
         return 'Rs. 500';
     }
@@ -307,12 +360,62 @@ class FavoritesPage extends StatelessWidget {
         return 'Water in 2 days';
       case 'Orchid':
         return 'Water in 7 days';
+      case 'Spider Plant':
+        return 'Water in 5 days';
+      case 'Rubber Plant':
+        return 'Water in 7 days';
+      case 'Pothos':
+        return 'Water in 5 days';
+      case 'ZZ Plant':
+        return 'Water in 14 days';
+      case 'Calathea':
+        return 'Water in 3 days';
+
       case 'Aloe Vera':
         return 'Water in 14 days';
       case 'Cactus':
         return 'Water in 21 days';
+      case 'Jade Plant':
+        return 'Water in 14 days';
+      case 'Echeveria':
+        return 'Water in 14 days';
+      case 'Haworthia':
+        return 'Water in 14 days';
+      case 'Burro\'s Tail':
+        return 'Water in 14 days';
+      case 'String of Pearls':
+        return 'Water in 10 days';
+      case 'Agave':
+        return 'Water in 21 days';
+
+      case 'Sunflower':
+        return 'Water in 2 days';
+      case 'Lavender':
+        return 'Water in 7 days';
+      case 'Basil':
+        return 'Water in 2 days';
       case 'Rose':
         return 'Water in 4 days';
+      case 'Hibiscus':
+        return 'Water in 3 days';
+      case 'Jasmine':
+        return 'Water in 4 days';
+      case 'Mint':
+        return 'Water in 2 days';
+      case 'Tomato Plant':
+        return 'Water in 2 days';
+      case 'Marigold':
+        return 'Water in 3 days';
+      case 'Bougainvillea':
+        return 'Water in 7 days';
+
+      case 'Lily':
+        return 'Water in 5 days';
+      case 'Daisy':
+        return 'Water in 4 days';
+      case 'Tulip':
+        return 'Water in 5 days';
+
       default:
         return 'Water in 7 days';
     }
@@ -330,12 +433,62 @@ class FavoritesPage extends StatelessWidget {
         return 'Every 3-4 days';
       case 'Orchid':
         return 'Every 5-7 days';
+      case 'Spider Plant':
+        return 'Every 7-10 days';
+      case 'Rubber Plant':
+        return 'Every 7-10 days';
+      case 'Pothos':
+        return 'Every 7-10 days';
+      case 'ZZ Plant':
+        return 'Every 2-3 weeks';
+      case 'Calathea':
+        return 'Every 5-7 days';
+
       case 'Aloe Vera':
         return 'Every 2-3 weeks';
       case 'Cactus':
         return 'Every 3-4 weeks';
+      case 'Jade Plant':
+        return 'Every 2-3 weeks';
+      case 'Echeveria':
+        return 'Every 2-3 weeks';
+      case 'Haworthia':
+        return 'Every 2-3 weeks';
+      case 'Burro\'s Tail':
+        return 'Every 2-3 weeks';
+      case 'String of Pearls':
+        return 'Every 2-3 weeks';
+      case 'Agave':
+        return 'Every 3-4 weeks';
+
+      case 'Sunflower':
+        return 'Every 2-3 days';
+      case 'Lavender':
+        return 'Every 1-2 weeks';
+      case 'Basil':
+        return 'Every 2-3 days';
       case 'Rose':
         return 'Every 3-4 days';
+      case 'Hibiscus':
+        return 'Every 3-4 days';
+      case 'Jasmine':
+        return 'Every 3-4 days';
+      case 'Mint':
+        return 'Every 2-3 days';
+      case 'Tomato Plant':
+        return 'Every 2-3 days';
+      case 'Marigold':
+        return 'Every 3-4 days';
+      case 'Bougainvillea':
+        return 'Every 5-7 days';
+
+      case 'Lily':
+        return 'Every 3-4 days';
+      case 'Daisy':
+        return 'Every 3-4 days';
+      case 'Tulip':
+        return 'Every 3-4 days';
+
       default:
         return 'Weekly';
     }
@@ -346,15 +499,46 @@ class FavoritesPage extends StatelessWidget {
       case 'Monstera':
       case 'Peace Lily':
       case 'Fern':
+      case 'Calathea':
         return 'Indirect light';
       case 'Snake Plant':
+      case 'ZZ Plant':
         return 'Low to bright light';
-      case 'Cactus':
+      case 'Orchid':
+        return 'Indirect light';
+      case 'Spider Plant':
+      case 'Pothos':
+      case 'Rubber Plant':
+        return 'Bright indirect light';
+
       case 'Aloe Vera':
+      case 'Cactus':
+      case 'Jade Plant':
+      case 'Echeveria':
+      case 'Haworthia':
+      case 'Burro\'s Tail':
+      case 'String of Pearls':
+      case 'Agave':
         return 'Bright direct light';
-      case 'Rose':
+
       case 'Sunflower':
+      case 'Rose':
+      case 'Hibiscus':
+      case 'Jasmine':
+      case 'Marigold':
+      case 'Bougainvillea':
+      case 'Basil':
+      case 'Tomato Plant':
+      case 'Lavender':
         return 'Full sun';
+      case 'Mint':
+        return 'Partial shade';
+
+      case 'Lily':
+      case 'Daisy':
+      case 'Tulip':
+        return 'Full sun to partial shade';
+
       default:
         return 'Indirect light';
     }
@@ -362,16 +546,43 @@ class FavoritesPage extends StatelessWidget {
 
   String _getDifficultyInfo(String plantName) {
     switch (plantName) {
-      case 'Cactus':
       case 'Snake Plant':
+      case 'ZZ Plant':
+      case 'Pothos':
       case 'Aloe Vera':
+      case 'Cactus':
+      case 'Jade Plant':
+      case 'Spider Plant':
+      case 'Mint':
+      case 'Basil':
         return 'Very Easy';
+
       case 'Monstera':
       case 'Peace Lily':
+      case 'Rubber Plant':
+      case 'Sunflower':
+      case 'Marigold':
+      case 'Daisy':
+      case 'Tomato Plant':
+      case 'Lavender':
+      case 'Echeveria':
+      case 'Haworthia':
         return 'Easy';
+
       case 'Fern':
       case 'Orchid':
+      case 'Calathea':
+      case 'Rose':
+      case 'Hibiscus':
+      case 'Jasmine':
+      case 'Bougainvillea':
+      case 'Lily':
+      case 'Tulip':
+      case 'String of Pearls':
+      case 'Burro\'s Tail':
+      case 'Agave':
         return 'Moderate';
+
       default:
         return 'Easy';
     }

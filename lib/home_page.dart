@@ -550,10 +550,10 @@ class _HomePageState extends State<HomePage> {
         width: double.infinity,
         height: double.infinity,
         decoration: const BoxDecoration(
-          image: DecorationImage(
-            image: AssetImage('assets/back7.jpg'),
-            fit: BoxFit.cover,
-          ),
+          // image: DecorationImage(
+          //   image: AssetImage('assets/back7.jpg'),
+          //   fit: BoxFit.cover,
+          // ),
         ),
         child: SingleChildScrollView(
           child: Column(
@@ -564,17 +564,16 @@ class _HomePageState extends State<HomePage> {
                 padding: const EdgeInsets.all(10),
                 decoration: BoxDecoration(
                   //color: const Color(0xFF4CAF50).withOpacity(0.1),
-                  color: const Color.fromARGB(255, 130, 194, 131),
+                  color: const Color.fromARGB(255, 179, 216, 179),
                   borderRadius: BorderRadius.circular(20),
                 ),
                 child: Row(
                   children: [
                     Image.asset(
-                      //'assets/image12.png',
                       'assets/back12.png',
-                      height: 100,
-                      width: 100,
-                      fit: BoxFit.contain,
+                      height: 120,
+                      width: 150,
+                      fit: BoxFit.fitWidth,
                     ),
                     const SizedBox(width: 5),
                     const Expanded(
@@ -844,7 +843,9 @@ class _HomePageState extends State<HomePage> {
               onTap: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const ProfilePage()),
+                  MaterialPageRoute(
+                    builder: (context) => ProfilePage(favorites: favorites),
+                  ),
                 );
               },
               child: Column(

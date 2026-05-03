@@ -6,7 +6,9 @@ import 'favorites_page.dart';
 import 'care_tips_page.dart';
 
 class ProfilePage extends StatelessWidget {
-  const ProfilePage({super.key});
+  final Map<String, bool> favorites;
+
+  const ProfilePage({super.key, required this.favorites});
 
   void _showLogoutDialog(BuildContext context) {
     showDialog(
@@ -76,15 +78,23 @@ class ProfilePage extends StatelessWidget {
                       color: Colors.white,
                       shape: BoxShape.circle,
                       border: Border.all(
-                        color: const Color(0xFF4CAF50),
+                        color: const Color.fromARGB(255, 1, 5, 1),
                         width: 3,
                       ),
                     ),
-                    child: const Center(
-                      child: Icon(
-                        Icons.person,
-                        size: 45,
-                        color: Color(0xFF4CAF50),
+                    child: ClipOval(
+                      child: Image.asset(
+                        'assets/profile.png',
+                        fit: BoxFit.cover,
+                        errorBuilder: (context, error, stackTrace) {
+                          return const Center(
+                            child: Icon(
+                              Icons.person,
+                              size: 45,
+                              color: Color.fromARGB(255, 2, 6, 2),
+                            ),
+                          );
+                        },
                       ),
                     ),
                   ),
@@ -94,7 +104,7 @@ class ProfilePage extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         const Text(
-                          'Sarah Johnson',
+                          'Sewwandi',
                           style: TextStyle(
                             fontSize: 22,
                             fontWeight: FontWeight.bold,
@@ -130,21 +140,6 @@ class ProfilePage extends StatelessWidget {
                       ],
                     ),
                   ),
-                ],
-              ),
-            ),
-          ),
-
-          const SizedBox(height: 16),
-          Card(
-            child: Padding(
-              padding: const EdgeInsets.all(20),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  _buildStatItem('12', 'Plants'),
-                  _buildStatItem('8', 'Favorites'),
-                  _buildStatItem('3', 'Tips'),
                 ],
               ),
             ),
@@ -265,6 +260,7 @@ class ProfilePage extends StatelessWidget {
 
           const SizedBox(height: 16),
 
+          // About Me Card
           Card(
             child: Padding(
               padding: const EdgeInsets.all(20),
@@ -277,7 +273,7 @@ class ProfilePage extends StatelessWidget {
                   ),
                   const SizedBox(height: 15),
                   Text(
-                    'Plant lover and proud plant parent of 12 beautiful plants. '
+                    'Plant lover and proud plant parent of 25+ beautiful plants. '
                     'I enjoy learning about new plants and sharing care tips with the community. '
                     'My goal is to create a green and peaceful home! 🌱',
                     style: TextStyle(
@@ -292,6 +288,7 @@ class ProfilePage extends StatelessWidget {
           ),
 
           const SizedBox(height: 16),
+
           Card(
             child: Column(
               children: [
@@ -347,7 +344,8 @@ class ProfilePage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => FavoritesPage(favorites: {}),
+                        builder: (context) =>
+                            FavoritesPage(favorites: favorites),
                       ),
                     );
                   },
@@ -389,6 +387,7 @@ class ProfilePage extends StatelessWidget {
 
                 const Divider(height: 1),
 
+                // Plant Care Tips
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -436,6 +435,7 @@ class ProfilePage extends StatelessWidget {
 
                 const Divider(height: 1),
 
+                // Settings
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -483,6 +483,7 @@ class ProfilePage extends StatelessWidget {
 
                 const Divider(height: 1),
 
+                // About
                 GestureDetector(
                   onTap: () {
                     Navigator.push(
@@ -530,6 +531,7 @@ class ProfilePage extends StatelessWidget {
 
                 const Divider(height: 1),
 
+                // Logout
                 GestureDetector(
                   onTap: () {
                     _showLogoutDialog(context);

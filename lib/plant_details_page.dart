@@ -75,6 +75,7 @@ class PlantDetailsPage extends StatelessWidget {
             Card(
               margin: const EdgeInsets.all(16),
               color: Colors.white,
+
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(20),
               ),
@@ -118,6 +119,7 @@ class PlantDetailsPage extends StatelessWidget {
                     ),
 
                     const SizedBox(height: 20),
+
                     Row(
                       children: [
                         const Icon(Icons.star, color: Colors.amber, size: 20),
@@ -133,6 +135,7 @@ class PlantDetailsPage extends StatelessWidget {
                     ),
 
                     const SizedBox(height: 25),
+
                     const Text(
                       'Care Information',
                       style: TextStyle(
@@ -142,40 +145,48 @@ class PlantDetailsPage extends StatelessWidget {
                       ),
                     ),
 
-                    const SizedBox(height: 15),
-                    _buildInfoRow(
-                      icon: Icons.water_drop,
-                      title: 'Watering',
-                      value: watering,
-                      color: Colors.blue,
-                    ),
+                    const SizedBox(height: 20),
 
-                    const SizedBox(height: 15),
-                    _buildInfoRow(
-                      icon: Icons.wb_sunny,
-                      title: 'Sunlight',
-                      value: sunlight,
-                      color: Colors.orange,
-                    ),
+                    GridView.count(
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      crossAxisCount: 2,
+                      crossAxisSpacing: 16,
+                      mainAxisSpacing: 16,
+                      childAspectRatio: 2.5,
+                      children: [
+                        _buildCareCard(
+                          icon: Icons.water_drop,
+                          title: 'Watering',
+                          value: watering,
+                          color: Colors.blue,
+                        ),
 
-                    const SizedBox(height: 15),
+                        _buildCareCard(
+                          icon: Icons.wb_sunny,
+                          title: 'Sunlight',
+                          value: sunlight,
+                          color: Colors.orange,
+                        ),
 
-                    _buildInfoRow(
-                      icon: Icons.thermostat,
-                      title: 'Temperature',
-                      value: temperature,
-                      color: Colors.red,
-                    ),
+                        _buildCareCard(
+                          icon: Icons.thermostat,
+                          title: 'Temperature',
+                          value: temperature,
+                          color: Colors.red,
+                        ),
 
-                    const SizedBox(height: 15),
-                    _buildInfoRow(
-                      icon: Icons.emoji_events,
-                      title: 'Difficulty',
-                      value: difficulty,
-                      color: Colors.purple,
+                        _buildCareCard(
+                          icon: Icons.emoji_events,
+                          title: 'Difficulty',
+                          value: difficulty,
+                          color: Colors.purple,
+                        ),
+                      ],
                     ),
 
                     const SizedBox(height: 25),
+
                     const Text(
                       'About',
                       style: TextStyle(
@@ -186,6 +197,7 @@ class PlantDetailsPage extends StatelessWidget {
                     ),
 
                     const SizedBox(height: 10),
+
                     Text(
                       description,
                       style: TextStyle(
@@ -196,8 +208,9 @@ class PlantDetailsPage extends StatelessWidget {
                     ),
 
                     const SizedBox(height: 25),
+
                     const Text(
-                      '💡 Care Tips',
+                      'Care Tips',
                       style: TextStyle(
                         fontSize: 20,
                         fontWeight: FontWeight.bold,
@@ -206,6 +219,7 @@ class PlantDetailsPage extends StatelessWidget {
                     ),
 
                     const SizedBox(height: 10),
+
                     Column(
                       children: careTips
                           .map((tip) => _buildTipItem(tip))
@@ -213,6 +227,7 @@ class PlantDetailsPage extends StatelessWidget {
                     ),
 
                     const SizedBox(height: 25),
+
                     Row(
                       children: [
                         Expanded(
@@ -281,38 +296,54 @@ class PlantDetailsPage extends StatelessWidget {
     );
   }
 
-  Widget _buildInfoRow({
+  Widget _buildCareCard({
     required IconData icon,
     required String title,
     required String value,
     required Color color,
   }) {
-    return Row(
-      children: [
-        Container(
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            color: color.withOpacity(0.1),
-            shape: BoxShape.circle,
-          ),
-          child: Icon(icon, color: color, size: 22),
-        ),
-        const SizedBox(width: 15),
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+    return Container(
+      decoration: BoxDecoration(
+        color: color.withOpacity(0.1),
+        borderRadius: BorderRadius.circular(15),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+        child: Row(
           children: [
-            Text(
-              title,
-              style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+            Container(
+              padding: const EdgeInsets.all(8),
+              decoration: BoxDecoration(
+                color: Colors.white,
+                shape: BoxShape.circle,
+              ),
+              child: Icon(icon, color: color, size: 20),
             ),
-            const SizedBox(height: 2),
-            Text(
-              value,
-              style: const TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+            const SizedBox(width: 12),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: TextStyle(fontSize: 12, color: Colors.grey[500]),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    value,
+                    style: const TextStyle(
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                ],
+              ),
             ),
           ],
         ),
-      ],
+      ),
     );
   }
 
